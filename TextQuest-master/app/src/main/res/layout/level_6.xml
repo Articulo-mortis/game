@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/koridor" />
+                android:background="@drawable/podval" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -68,54 +68,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Сбежать"
+                    android:text="Спрятаться в шкаф"
                     android:background="@color/black95"
                     android:textColor="@color/white"
                     android:padding="10dp"
                     android:layout_gravity="center"
                     android:textSize="24dp" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Текст3"
-                android:textSize="24dp"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:orientation="vertical" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Броситься влево"
-                    android:background="@color/black95"
-                    android:textColor="@color/white"
-                    android:padding="10dp"
-                    android:layout_gravity="center"
-                    android:textSize="24dp"  />
-
-                <Button
-                    android:id="@+id/button_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Броситься вправо"
-                    android:background="@color/black95"
-                    android:textColor="@color/white"
-                    android:padding="10dp"
-                    android:layout_gravity="center"
-                    android:textSize="24dp"  />
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -33,13 +33,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 buttonStart.setTextColor(getResources().getColor(R.color.blue));
-                try{
+
                     Intent intent = new Intent (MainActivity.this, Level1.class);
                     // переход с главной страницы на level1
                     startActivity(intent);finish();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                 }
+
             }
         });
 

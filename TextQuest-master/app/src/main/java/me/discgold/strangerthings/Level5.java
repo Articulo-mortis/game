@@ -18,62 +18,75 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Level5 extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
-    OneTable oneTable = new OneTable();
+
     Delay delay = new Delay();
     public Animation a;
     public TextView textView1;
+    public TextView textView2;
+    public TextView textView3;
     public ImageView imageView1;
-    public Button buttonNextLevel;
+    public Button button_1;
+    public Button button_2;
+    public Button button_3;
 
-    public int line = 0;
+    public int line = -1;
+    public int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_5);
+
         final TextView textView1 = (TextView)findViewById(R.id.textView1);
-        final ImageView imageView1 = (ImageView) findViewById(R.id.level_one_image);
-        final Button buttonNextLevel = (Button)findViewById(R.id.button_next_level);
+        final TextView textView2 = (TextView)findViewById(R.id.textView2);
+        final TextView textView3 = (TextView)findViewById(R.id.textView3);
 
-        textView1.setText(oneTable.onescenario_ru[21]);
+        final ImageView imageView1 = (ImageView) findViewById(R.id.level_four_image);
+        final Button button_1 = (Button)findViewById(R.id.button_1);
+        final Button button_2 = (Button)findViewById(R.id.button_2);
+        final Button button_3 = (Button)findViewById(R.id.button_3);
 
-        buttonNextLevel.setText(oneTable.onescenario_ru[22]);
 
-        //внизу будет код, который прячет текст
+       /* textView1.setText(our_table.onescenario[0]);
+        textView2.setText(our_table.onescenario[1]);
+        textView3.setText(our_table.onescenario[4]);
+        button_1.setText(our_table.onescenario[2]);
+        button_2.setText(our_table.onescenario[3]);
+        button_3.setText(our_table.onescenario[5]);
+        button_4.setText(our_table.onescenario[6]);*/
+
+
         textView1.setVisibility(View.INVISIBLE);
+        textView2.setVisibility(View.INVISIBLE);
+        textView3.setVisibility(View.GONE);
         imageView1.setVisibility(View.INVISIBLE);
-        buttonNextLevel.setVisibility(View.INVISIBLE);
-        //конец скрытия текста
+        button_1.setVisibility(View.GONE);
+        button_2.setVisibility(View.GONE);
+        button_3.setVisibility(View.GONE);
 
         //команда, которая запускает AsyncTask
         delay.execute();
-        //конец команды, которая запускает AsyncTask
 
-        buttonNextLevel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try{
-                    Intent intent = new Intent (Level5.this, Level3.class);
-                    startActivity(intent);finish();
-                } catch (Exception e) {
-
-                }
-            }
-        });
 
         Window w =getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
+
     //с этого места начинается код AsyncTask
     class Delay extends AsyncTask<Void, Integer, Void>{
 
         @Override
             protected Void doInBackground(Void... params){
-            while (line<=2){
+            while (line<=5){
+                if (count == 0 && line == 4)
+                    line = 3;
                 publishProgress(line++);
                 try{
-                    Thread.sleep(4000);
+                    Thread.sleep(2000);
                     if (isCancelled()) return null;
-                }catch(Exception e){}
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
             }
             return null;
         }
@@ -81,31 +94,84 @@ public class Level5 extends AppCompatActivity {
         @Override
         protected void onProgressUpdate (Integer... values){
         final TextView textView1 = (TextView)findViewById(R.id.textView1);
-        final ImageView imageView1 = (ImageView) findViewById(R.id.level_one_image);
-        final Button buttonNextLevel = (Button)findViewById(R.id.button_next_level);
+        final TextView textView2 = (TextView)findViewById(R.id.textView2);
+        final TextView textView3 = (TextView)findViewById(R.id.textView3);
+        final ImageView imageView1 = (ImageView) findViewById(R.id.level_four_image);
+        final Button button_1 = (Button)findViewById(R.id.button_1);
+        final Button button_2 = (Button)findViewById(R.id.button_2);
+        final Button button_3 = (Button)findViewById(R.id.button_3);
 
         final Animation a = AnimationUtils.loadAnimation(Level5.this, R.anim.alpha);
 
             switch(line){
-                case 1: textView1.setVisibility(View.VISIBLE); textView1.startAnimation(a); break;
-                case 2: imageView1.setVisibility(View.VISIBLE); imageView1.startAnimation(a); break;
-                case 3: buttonNextLevel.setVisibility(View.VISIBLE); buttonNextLevel.startAnimation(a); break;
+                case 0: textView1.setVisibility(View.VISIBLE); textView1.startAnimation(a); break;
+                case 1: imageView1.setVisibility(View.VISIBLE); imageView1.startAnimation(a); break;
+                case 2: textView2.setVisibility(View.VISIBLE); textView2.startAnimation(a); break;
+                case 3:
+                    button_1.setVisibility(View.VISIBLE); button_1.startAnimation(a);
+                    button_2.setVisibility(View.VISIBLE); button_2.startAnimation(a);
+                    break;
+                case 4:
+                    button_1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (count==0) {
+                                button_1.setTextColor(getResources().getColor(R.color.blue));
+                                count = 1;
+                                line = 5;
+                                try {
+
+                                    Intent intent = new Intent(Level5.this, Level3.class);
+                                    startActivity(intent);
+                                    finish();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    });
+                    button_2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (count==0) {
+                                button_2.setTextColor(getResources().getColor(R.color.blue));
+                                count = 1;
+                            }
+                        }
+                    });
+                    break;
+                case 5: textView3.setVisibility(View.VISIBLE); textView3.startAnimation(a); break;
+                case 6:
+                    button_3.setVisibility(View.VISIBLE); button_3.startAnimation(a);
+                    button_3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            button_3.setTextColor(getResources().getColor(R.color.blue));
+                            try{
+                                Intent intent = new Intent (Level5.this, Level3.class);
+                                startActivity(intent);finish();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });break;
+
                 default: break;
             }
         }
 
     }
-    //с этого места заканчивается код AsyncTask
+
 
     //системная кнопка "Назад" - начало
     @Override
     public void onBackPressed(){
         try{
-            Intent intent = new Intent (Level5.this, Level4.class);
+            Intent intent = new Intent (Level5.this, MainActivity.class);
             startActivity(intent);finish();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
-    //системная кнопка "Назад" - конец
+
 }
