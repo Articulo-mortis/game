@@ -2,6 +2,7 @@ package me.discgold.strangerthings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,15 +29,16 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonStart = (Button)findViewById(R.id.buttonStart);
         // нажимает на кнопку
         buttonStart.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
+                buttonStart.setTextColor(getResources().getColor(R.color.blue));
                 try{
-                    Intent intent = new Intent (MainActivity.this, Level3.class);
+                    Intent intent = new Intent (MainActivity.this, Level1.class);
                     // переход с главной страницы на level1
                     startActivity(intent);finish();
                 } catch (Exception e) {
                     e.printStackTrace();
-                    //
                  }
             }
         });
