@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/root_element"
     android:background="#000000"
     tools:context=".MainActivity"
     android:orientation="vertical">
@@ -22,16 +23,35 @@
         android:layout_weight="1"
         android:background="@drawable/main_background" />
 
-        <Button
-        android:id="@+id/buttonStart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="4"
-        android:background="@color/black95"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="Начать"
-        android:textColor="@color/white"
-        android:textSize="30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="5" >
+
+            <Button
+                android:id="@+id/button_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black95"
+                android:layout_gravity="center"
+                android:text="Войти"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+            <Button
+                android:id="@+id/button_2"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/black95"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Зарегистрироваться"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+    </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

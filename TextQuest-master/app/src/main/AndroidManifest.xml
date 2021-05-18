@@ -105,6 +105,15 @@
         </activity>
 
         <activity
+            android:name=".Level0"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <!-- кодовая часть MainActivity запускается первая -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".Level9"
             android:screenOrientation="portrait">
             <intent-filter>
