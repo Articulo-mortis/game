@@ -226,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (backPressedTime + 2000 > System.currentTimeMillis()){
+            stopService(new Intent(this, MyService.class));
             backToast.cancel();
             super.onBackPressed();
             return;

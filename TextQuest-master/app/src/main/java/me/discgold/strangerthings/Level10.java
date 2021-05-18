@@ -44,7 +44,7 @@ public class Level10 extends AppCompatActivity {
             public void onClick(View v) {
                 button_level10.setTextColor(getResources().getColor(R.color.blue));
                 try{
-                    Intent intent = new Intent (Level10.this, MainActivity.class);
+                    Intent intent = new Intent (Level10.this, Level0.class);
                     startActivity(intent);finish();
                 } catch (Exception e) {
 
@@ -60,6 +60,7 @@ public class Level10 extends AppCompatActivity {
         @Override
             protected Void doInBackground(Void... params){
             while (line<=2){
+
                 publishProgress(line++);
                 try{
                     Thread.sleep(2000);
@@ -83,6 +84,6 @@ public class Level10 extends AppCompatActivity {
         }
 
     }
-    //с этого места заканчивается код AsyncTask
+
 
 }

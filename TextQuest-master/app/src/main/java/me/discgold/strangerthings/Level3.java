@@ -59,7 +59,7 @@ public class Level3 extends AppCompatActivity {
             public void onClick(View v) {
                 button_1.setTextColor(getResources().getColor(R.color.blue));
                 try{
-                    Intent intent = new Intent (Level3.this, MainActivity.class);
+                    Intent intent = new Intent (Level3.this, Level0.class);
                     startActivity(intent);finish();
                 } catch (Exception e) {
 
@@ -112,7 +112,7 @@ public class Level3 extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         try{
-            Intent intent = new Intent (Level3.this, Level2.class);
+            Intent intent = new Intent (Level3.this, Level0.class);
             startActivity(intent);finish();
         } catch (Exception e) {
 

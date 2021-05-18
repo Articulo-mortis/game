@@ -116,7 +116,7 @@ public class Level1 extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         try{
-            Intent intent = new Intent (Level1.this, MainActivity.class);
+            Intent intent = new Intent (Level1.this, Level0.class);
             startActivity(intent);finish();
         } catch (Exception e) {
             e.printStackTrace();

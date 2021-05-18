@@ -23,6 +23,7 @@ public class Level0 extends AppCompatActivity {
         // и выполняет xml
         setContentView(R.layout.level_0);
         // находит кнопку с id buttonStart
+        startService(new Intent(this, MyService.class));
         final Button buttonStart = (Button)findViewById(R.id.buttonStart);
         // нажимает на кнопку
         buttonStart.setOnClickListener(new View.OnClickListener() {
@@ -43,9 +44,20 @@ public class Level0 extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed(){
+        try{
+            Intent intent = new Intent (Level0.this, MainActivity.class);
+            startActivity(intent);finish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*@Override
     public void onBackPressed() {
         if (backPressedTime + 2000 > System.currentTimeMillis()){
             backToast.cancel();
+            stopService(new Intent(this, MyService.class));
             super.onBackPressed();
             return;
         }else{
@@ -54,5 +66,5 @@ public class Level0 extends AppCompatActivity {
         }
 
         backPressedTime = System.currentTimeMillis();
-    }
+    }*/
 }
