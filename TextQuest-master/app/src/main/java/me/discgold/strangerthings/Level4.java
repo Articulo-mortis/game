@@ -159,8 +159,6 @@ public class Level4 extends AppCompatActivity {
                             }
                         }
                     });
-
-
                     button_4.setVisibility(View.VISIBLE); button_4.startAnimation(a);
                     button_4.setOnClickListener(new View.OnClickListener() {
                         @Override

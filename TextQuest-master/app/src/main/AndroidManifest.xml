@@ -59,6 +59,69 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".Level1"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <!-- кодовая часть MainActivity запускается первая -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Level2"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <!-- кодовая часть MainActivity запускается первая -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Level3"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <!-- кодовая часть MainActivity запускается первая -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Level7"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <!-- кодовая часть MainActivity запускается первая -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Level8"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <!-- кодовая часть MainActivity запускается первая -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Level9"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <!-- кодовая часть MainActivity запускается первая -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Level10"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <!-- кодовая часть MainActivity запускается первая -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

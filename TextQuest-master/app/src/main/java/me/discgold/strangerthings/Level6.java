@@ -35,7 +35,7 @@ public class Level6 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level_5);
+        setContentView(R.layout.level_6);
 
         final TextView textView1 = (TextView)findViewById(R.id.textView1);
         final TextView textView2 = (TextView)findViewById(R.id.textView2);
@@ -76,8 +76,8 @@ public class Level6 extends AppCompatActivity {
         @Override
             protected Void doInBackground(Void... params){
             while (line<=4){
-                if (count == 0 && line == 3)
-                    line = 2;
+                if (count == 0 && line == 4)
+                    line = 3;
                 publishProgress(line++);
                 try{
                     Thread.sleep(2000);
