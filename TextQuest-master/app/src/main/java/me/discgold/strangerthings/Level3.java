@@ -31,7 +31,8 @@ public class Level3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_3);
-
+        stopService(new Intent(this, MyService.class));
+        startService(new Intent(this, MusicService.class));
         SharedPreferences save=getSharedPreferences("Save", MODE_PRIVATE);
         SharedPreferences.Editor editor = save.edit();
         editor.putInt("Level",2);
@@ -58,6 +59,7 @@ public class Level3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 button_1.setTextColor(getResources().getColor(R.color.blue));
+                stopService(new Intent(Level3.this, MusicService.class));
                 try{
                     Intent intent = new Intent (Level3.this, Level0.class);
                     startActivity(intent);finish();
@@ -113,6 +115,7 @@ public class Level3 extends AppCompatActivity {
     public void onBackPressed(){
         try{
             Intent intent = new Intent (Level3.this, Level0.class);
+            stopService(new Intent(this, MusicService.class));
             startActivity(intent);finish();
         } catch (Exception e) {
 

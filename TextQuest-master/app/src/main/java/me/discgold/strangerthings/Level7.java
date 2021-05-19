@@ -46,6 +46,8 @@ public class Level7 extends AppCompatActivity {
         imageView2.setVisibility(View.INVISIBLE);
         buttonNextLevel8.setVisibility(View.INVISIBLE);
         buttonNextLevel9.setVisibility(View.INVISIBLE);
+        buttonNextLevel8.setVisibility(View.GONE);
+        buttonNextLevel9.setVisibility(View.GONE);
         //конец скрытия текста
 
         //команда, которая запускает AsyncTask

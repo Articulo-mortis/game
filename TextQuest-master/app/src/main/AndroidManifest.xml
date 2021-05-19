@@ -132,6 +132,7 @@
         </activity>
 
         <service android:enabled="true" android:name=".MyService" />
+        <service android:enabled="true" android:name=".MusicService" />
     </application>
 
 </manifest>
